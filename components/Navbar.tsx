@@ -1,17 +1,32 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown, Sparkles } from "lucide-react";
 import { services } from "@/lib/constants";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<"services" | "process" | null>(
     null
   );
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openMenu = (menu: "services" | "process") => {
+    if (closeTimerRef.current) {
+      clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+    setActiveMenu(menu);
+  };
+
+  const queueMenuClose = () => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    closeTimerRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 180);
+  };
 
   const serviceMenu = services.map((service) => ({
     label: service.title,
@@ -25,20 +40,9 @@ export function Navbar() {
     { label: "Launch & Optimization", href: "/process/launch" },
   ];
 
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "border-b border-white/10 bg-[#0A0A0A]/95 shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-[20px]"
-          : "border-b border-white/10 bg-[#0A0A0A]"
-      }`}
+      className="w-full border-b border-white/10 bg-[#0A0A0A]"
     >
       <nav className="mx-auto flex h-20 w-[92%] max-w-7xl items-center justify-between">
         <Link
@@ -60,19 +64,24 @@ export function Navbar() {
           </Link>
           <div
             className="relative"
-            onMouseEnter={() => setActiveMenu("services")}
-            onMouseLeave={() => setActiveMenu(null)}
+            onMouseEnter={() => openMenu("services")}
+            onMouseLeave={queueMenuClose}
           >
             <button className="flex items-center gap-1 text-sm text-[#D1D5DB] transition-colors hover:text-[#60A5FA]">
               Services <ChevronDown size={14} />
             </button>
             {activeMenu === "services" && (
-              <div className="absolute left-0 top-full w-56 rounded-xl border border-white/10 bg-[#111111] p-2 shadow-xl">
+              <div
+                className="absolute left-0 top-full z-20 w-56 rounded-xl border border-white/10 bg-[#111111] p-2 shadow-xl"
+                onMouseEnter={() => openMenu("services")}
+                onMouseLeave={queueMenuClose}
+              >
                 {serviceMenu.map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
                     className="block rounded-lg px-3 py-2 text-sm text-[#D1D5DB] hover:bg-white/10 hover:text-[#93C5FD]"
+                    onClick={() => setActiveMenu(null)}
                   >
                     {item.label}
                   </Link>
@@ -94,19 +103,24 @@ export function Navbar() {
           </Link>
           <div
             className="relative"
-            onMouseEnter={() => setActiveMenu("process")}
-            onMouseLeave={() => setActiveMenu(null)}
+            onMouseEnter={() => openMenu("process")}
+            onMouseLeave={queueMenuClose}
           >
             <button className="flex items-center gap-1 text-sm text-[#D1D5DB] transition-colors hover:text-[#60A5FA]">
               Process <ChevronDown size={14} />
             </button>
             {activeMenu === "process" && (
-              <div className="absolute left-0 top-full w-56 rounded-xl border border-white/10 bg-[#111111] p-2 shadow-xl">
+              <div
+                className="absolute left-0 top-full z-20 w-56 rounded-xl border border-white/10 bg-[#111111] p-2 shadow-xl"
+                onMouseEnter={() => openMenu("process")}
+                onMouseLeave={queueMenuClose}
+              >
                 {processMenu.map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}
                     className="block rounded-lg px-3 py-2 text-sm text-[#D1D5DB] hover:bg-white/10 hover:text-[#93C5FD]"
+                    onClick={() => setActiveMenu(null)}
                   >
                     {item.label}
                   </Link>
