@@ -33,8 +33,8 @@ export default function ServicesPage() {
                 className="overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[var(--shadow-sm)]"
                 style={{ borderLeft: `4px solid ${service.color}` }}
               >
-                <div className="grid gap-8 p-8 lg:grid-cols-2 lg:items-center">
-                  <div>
+                <div className="grid gap-8 p-8 lg:grid-cols-[40%_60%] lg:items-start">
+                  <div className="sticky top-24">
                     <div className="grid h-20 w-20 place-items-center rounded-2xl" style={{ background: `${service.color}1A` }}>
                       <Icon size={34} style={{ color: service.color }} />
                     </div>
@@ -50,17 +50,6 @@ export default function ServicesPage() {
                           {tag}
                         </span>
                       ))}
-                    </div>
-                    <div className="mt-6">
-                      <p className="text-sm font-semibold text-[#0A0A0A]">What&apos;s included</p>
-                      <ul className="mt-3 space-y-2">
-                        {service.includes.map((item) => (
-                          <li key={item} className="flex items-center gap-2 text-sm text-[#4B5563]">
-                            <CheckCircle2 size={16} style={{ color: service.color }} />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
                     </div>
                     <div className="mt-8 flex flex-wrap gap-3">
                       <Link
@@ -79,8 +68,39 @@ export default function ServicesPage() {
                       </Link>
                     </div>
                   </div>
-                  <div className="relative h-64 w-full overflow-hidden rounded-xl lg:h-[400px]">
-                    <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <article className="group rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-6 transition-all duration-300 hover:border-[#D1D5DB] hover:bg-white hover:shadow-[var(--shadow-sm)] sm:col-span-2">
+                      <h3 className="text-lg font-bold text-[#0A0A0A]">What&apos;s included</h3>
+                      <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+                        {service.includes.map((item) => (
+                          <li key={item} className="flex items-center gap-3 text-sm text-[#4B5563]">
+                            <CheckCircle2 size={18} style={{ color: service.color }} className="flex-shrink-0" />
+                            <span className="font-medium">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </article>
+                    <article className="group rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D1D5DB] hover:bg-white hover:shadow-[var(--shadow-sm)]">
+                      <h3 className="text-lg font-bold text-[#0A0A0A]">Ideal for</h3>
+                      <ul className="mt-4 space-y-3">
+                        {service.idealFor.map((item) => (
+                          <li key={item} className="flex items-center gap-3 text-sm text-[#4B5563]">
+                            <span className="h-2 w-2 rounded-full" style={{ background: service.color }}></span>
+                            <span className="font-medium">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </article>
+                    <article className="group rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D1D5DB] hover:bg-white hover:shadow-[var(--shadow-sm)]">
+                      <h3 className="text-lg font-bold text-[#0A0A0A]">Expected outcomes</h3>
+                      <div className="mt-4 flex flex-col gap-3">
+                        {service.outcomes.slice(0, 2).map((item) => (
+                          <span key={item} className="rounded-lg border border-[#E5E7EB] bg-white px-3 py-2.5 text-sm font-medium text-[#374151] transition-colors group-hover:border-[#D1D5DB]">
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </article>
                   </div>
                 </div>
               </motion.article>

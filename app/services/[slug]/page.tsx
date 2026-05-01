@@ -41,45 +41,70 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                   ))}
                 </div>
               </div>
-            </div>
-            <div className="mt-8 relative h-[300px] w-full overflow-hidden rounded-2xl lg:h-[400px]">
-              <img src={service.image} alt={service.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              <div className="absolute bottom-6 left-6 grid h-16 w-16 place-items-center rounded-2xl bg-white/95 backdrop-blur-sm shadow-lg">
-                <Icon size={30} style={{ color: service.color }} />
+              <div className="grid h-20 w-20 place-items-center rounded-2xl" style={{ background: `${service.color}1A` }}>
+                <Icon size={34} style={{ color: service.color }} />
               </div>
             </div>
           </div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-3">
-            <section className="rounded-2xl border border-[#E5E7EB] bg-[#FCFCFD] p-6 lg:col-span-2">
-              <h2 className="text-xl font-bold text-[#0A0A0A]">What is included</h2>
-              <ul className="mt-4 space-y-3">
-                {service.includes.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-[#4B5563]">
-                    <CheckCircle2 size={16} style={{ color: service.color }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </section>
+          <div className="mt-12 space-y-12">
+            <div className="grid gap-6 lg:grid-cols-2">
+              <section className="group rounded-3xl border border-[#E5E7EB] bg-[#F9FAFB] p-8 transition-all hover:-translate-y-1 hover:border-[#D1D5DB] hover:bg-white hover:shadow-md">
+                <div className="flex items-center gap-4">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl bg-white shadow-sm" style={{ color: service.color }}>
+                    <Icon size={24} />
+                  </div>
+                  <h2 className="text-2xl font-bold text-[#0A0A0A]">What&apos;s Included</h2>
+                </div>
+                <ul className="mt-8 space-y-4">
+                  {service.includes.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-[#4B5563] transition-colors group-hover:text-[#111827]">
+                      <CheckCircle2 size={20} style={{ color: service.color }} className="flex-shrink-0" />
+                      <span className="text-lg">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
 
-            <section className="rounded-2xl border border-[#E5E7EB] bg-[#FCFCFD] p-6">
-              <h2 className="text-xl font-bold text-[#0A0A0A]">Ideal for</h2>
-              <ul className="mt-4 space-y-2 text-sm text-[#4B5563]">
-                {service.idealFor.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-            </section>
+              <section className="group rounded-3xl border border-[#E5E7EB] bg-[#F9FAFB] p-8 transition-all hover:-translate-y-1 hover:border-[#D1D5DB] hover:bg-white hover:shadow-md">
+                <h2 className="text-2xl font-bold text-[#0A0A0A]">Ideal For</h2>
+                <ul className="mt-8 space-y-4">
+                  {service.idealFor.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-[#4B5563] transition-colors group-hover:text-[#111827]">
+                      <span className="h-2.5 w-2.5 rounded-full" style={{ background: service.color }}></span>
+                      <span className="text-lg">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
 
-            <section className="rounded-2xl border border-[#E5E7EB] bg-[#FCFCFD] p-6 lg:col-span-3">
-              <h2 className="text-xl font-bold text-[#0A0A0A]">Expected outcomes</h2>
-              <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            <section className="rounded-3xl border border-[#E5E7EB] bg-[#F9FAFB] p-8 lg:p-10">
+              <h2 className="text-2xl font-bold text-[#0A0A0A]">Expected Outcomes</h2>
+              <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 {service.outcomes.map((item) => (
-                  <article key={item} className="rounded-xl border border-[#E5E7EB] bg-white p-4 text-sm font-medium text-[#374151]">
-                    {item}
+                  <article key={item} className="group relative overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white p-6 transition-all hover:-translate-y-1 hover:border-[#D1D5DB] hover:shadow-md">
+                    <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full opacity-[0.03] transition-transform duration-500 group-hover:scale-150" style={{ background: service.color }} />
+                    <p className="relative z-10 text-lg font-semibold text-[#111827]">{item}</p>
                   </article>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold text-[#0A0A0A]">How We Deliver It</h2>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  { step: "01", title: "Audit & Strategy", desc: "We map out your exact needs and find the highest leverage automation opportunities." },
+                  { step: "02", title: "Architecture", desc: "We design the data models, workflows, and integrations required for stability." },
+                  { step: "03", title: "Build & Test", desc: "We develop the solution and run rigorous edge-case testing before deployment." },
+                  { step: "04", title: "Handover", desc: "We deploy to production, train your team, and provide ongoing maintenance." }
+                ].map((phase, idx) => (
+                  <div key={phase.step} className="group relative rounded-2xl border border-[#E5E7EB] bg-white p-6 transition-all hover:-translate-y-1 hover:border-[#D1D5DB] hover:shadow-md">
+                    <span className="text-4xl font-extrabold opacity-[0.05] transition-opacity group-hover:opacity-[0.15]" style={{ color: service.color }}>{phase.step}</span>
+                    <h3 className="mt-3 text-lg font-bold text-[#0A0A0A]">{phase.title}</h3>
+                    <p className="mt-2 text-sm text-[#6B7280]">{phase.desc}</p>
+                  </div>
                 ))}
               </div>
             </section>
