@@ -29,12 +29,12 @@ export default function ProcessPage() {
     <main className="section-shell bg-white py-16">
       <div className="container-shell">
         <section className="py-10 text-center">
-          <h1 className="text-4xl font-extrabold text-[#0A0A0A] sm:text-6xl">How We Work</h1>
-          <p className="mt-3 text-[#6B7280]">A clear, collaborative process from workflow audit to automation launch.</p>
+          <h1 className="text-4xl font-extrabold text-[#151239] sm:text-6xl">How We Work</h1>
+          <p className="mt-3 text-[#605D84]">A clear, collaborative process from workflow audit to automation launch.</p>
         </section>
 
         <section className="relative mx-auto mt-8 max-w-5xl space-y-8 pb-12">
-          <div className="absolute left-8 top-5 hidden h-[88%] border-l border-dashed border-[#BFDBFE] md:block" />
+          <div className="absolute left-8 top-5 hidden h-[88%] border-l border-dashed border-[#C4B5FD] md:block" />
           {processSteps.map((step, index) => {
             const Icon = stepIcons[index];
             return (
@@ -43,7 +43,7 @@ export default function ProcessPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={`relative grid gap-8 rounded-2xl border border-[#E5E7EB] bg-white p-7 shadow-[var(--shadow-sm)] lg:grid-cols-[120px_1fr_1fr] ${index % 2 === 1 ? "lg:ml-14" : ""}`}
+                className={`relative grid gap-8 rounded-2xl border border-[#E2DDF5] bg-white p-7 shadow-[var(--shadow-sm)] lg:grid-cols-[120px_1fr_1fr] ${index % 2 === 1 ? "lg:ml-14" : ""}`}
               >
                 <p className="absolute right-4 top-2 text-7xl font-extrabold opacity-10" style={{ color: step.color }}>
                   {step.step}
@@ -77,8 +77,8 @@ export default function ProcessPage() {
         </section>
 
         <section className="mx-auto max-w-4xl pb-10">
-          <h2 className="text-2xl font-bold text-[#0A0A0A]">FAQ</h2>
-          <div className="mt-4 divide-y divide-[#E5E7EB] rounded-2xl border border-[#E5E7EB]">
+          <h2 className="text-2xl font-bold text-[#151239]">FAQ</h2>
+          <div className="mt-4 divide-y divide-[#E2DDF5] rounded-2xl border border-[#E2DDF5]">
             {faqs.map((faq, index) => {
               const open = openIndex === index;
               return (
@@ -88,10 +88,10 @@ export default function ProcessPage() {
                   onClick={() => setOpenIndex(open ? null : index)}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-[#0A0A0A]">{faq.q}</span>
-                    <span className={`text-xl text-[#2563EB] transition-transform ${open ? "rotate-45" : ""}`}>+</span>
+                    <span className="font-semibold text-[#151239]">{faq.q}</span>
+                    <span className={`text-xl text-[#5A42FF] transition-transform ${open ? "rotate-45" : ""}`}>+</span>
                   </div>
-                  {open && <p className="mt-2 text-sm text-[#6B7280]">{faq.a}</p>}
+                  {open && <p className="mt-2 text-sm text-[#605D84]">{faq.a}</p>}
                 </button>
               );
             })}

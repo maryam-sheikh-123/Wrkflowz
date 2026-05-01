@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0a0a0a;
+  --foreground: #151239;
   --shadow-sm: 0 6px 20px rgba(15, 23, 42, 0.06);
 }
 
@@ -40,26 +40,26 @@ body {
 
 .btn-primary {
   border: 0;
-  background: #0a0a0a;
+  background: #151239;
   color: white;
   transition: all 0.25s ease;
 }
 
 .btn-primary:hover {
-  background: #2563eb;
+  background: #5A42FF;
   box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary {
-  border: 1px solid #e5e7eb;
+  border: 1px solid #E2DDF5;
   background: white;
-  color: #374151;
+  color: #312D5A;
   transition: all 0.25s ease;
 }
 
 .btn-secondary:hover {
-  border-color: #2563eb;
-  color: #2563eb;
+  border-color: #5A42FF;
+  color: #5A42FF;
 }
 
 .section-kicker {
@@ -68,7 +68,7 @@ body {
   gap: 0.75rem;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  color: #2563eb;
+  color: #5A42FF;
   font-weight: 700;
 }
 
@@ -78,7 +78,7 @@ body {
   display: inline-flex;
   width: 38px;
   height: 1px;
-  background: #bfdbfe;
+  background: #C4B5FD;
 }
 
 .marquee-track {
@@ -131,12 +131,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #111111;
+  background: #120F36;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: #374151;
+  background: #312D5A;
 }
 
 ::-webkit-scrollbar-thumb:hover {

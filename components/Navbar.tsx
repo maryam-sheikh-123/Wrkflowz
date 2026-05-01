@@ -42,14 +42,14 @@ export function Navbar() {
 
   return (
     <header
-      className="w-full border-b border-[#1E3A8A] bg-[#0B1E6D]"
+      className="w-full border-b border-white/10 bg-[#151239]"
     >
       <nav className="mx-auto flex h-20 w-[92%] max-w-7xl items-center justify-between">
         <Link
           href="/"
           className="flex items-center gap-2 text-xl font-extrabold tracking-tight text-white"
         >
-          <span className="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-[#2563EB] to-[#7C3AED] text-white shadow-sm">
+          <span className="grid h-7 w-7 place-items-center rounded-md bg-gradient-to-br from-[#5A42FF] to-[#7C3AED] text-white shadow-sm">
             <Sparkles size={14} />
           </span>
           wrkflowz
@@ -72,7 +72,7 @@ export function Navbar() {
             </button>
             {activeMenu === "services" && (
               <div
-                className="absolute left-0 top-full z-20 w-56 rounded-xl border border-white/10 bg-[#111111] p-2 shadow-xl"
+                className="absolute left-0 top-full z-20 w-56 rounded-xl border border-white/10 bg-[#120F36] p-2 shadow-xl"
                 onMouseEnter={() => openMenu("services")}
                 onMouseLeave={queueMenuClose}
               >
@@ -117,7 +117,7 @@ export function Navbar() {
             </button>
             {activeMenu === "process" && (
               <div
-                className="absolute left-0 top-full z-20 w-56 rounded-xl border border-white/10 bg-[#111111] p-2 shadow-xl"
+                className="absolute left-0 top-full z-20 w-56 rounded-xl border border-white/10 bg-[#120F36] p-2 shadow-xl"
                 onMouseEnter={() => openMenu("process")}
                 onMouseLeave={queueMenuClose}
               >
@@ -142,7 +142,7 @@ export function Navbar() {
           </Link>
           <Link
             href="/contact"
-            className="rounded-xl bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[#7C3AED] hover:shadow-md active:scale-95"
+            className="rounded-xl bg-[#5A42FF] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-[#7C3AED] hover:shadow-md active:scale-95"
           >
             Start a Project
           </Link>
@@ -164,7 +164,7 @@ export function Navbar() {
           initial={{ opacity: 0, y: -18 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -18 }}
-          className="border-t border-white/10 bg-[#0A0A0A] px-6 py-5 md:hidden"
+          className="border-t border-white/10 bg-[#151239] px-6 py-5 md:hidden"
         >
           <div className="flex flex-col gap-4">
             <Link
@@ -174,7 +174,7 @@ export function Navbar() {
             >
               Home
             </Link>
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#6B7280]">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[#605D84]">
               Services
             </p>
             {serviceMenu.map((item) => (
@@ -208,7 +208,7 @@ export function Navbar() {
             >
               About
             </Link>
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#6B7280]">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[#605D84]">
               Process
             </p>
             {processMenu.map((item) => (
@@ -230,7 +230,7 @@ export function Navbar() {
             </Link>
             <Link
               href="/contact"
-              className="mt-2 inline-flex w-fit rounded-xl bg-[#2563EB] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#7C3AED]"
+              className="mt-2 inline-flex w-fit rounded-xl bg-[#5A42FF] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#7C3AED]"
               onClick={() => setIsOpen(false)}
             >
               Start a Project

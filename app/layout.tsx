@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full bg-white font-sans text-[#0A0A0A]">
+      <body className="min-h-full bg-white font-sans text-[#151239]">
         <Navbar />
         <div className="pt-20">{children}</div>
         <Footer />

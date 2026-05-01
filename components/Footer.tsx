@@ -21,7 +21,7 @@ const iconMap = {
 
 export function Footer() {
   return (
-    <footer className="bg-[#0A0A0A] px-6 py-14 text-white sm:px-8 lg:px-12">
+    <footer className="bg-[#151239] px-6 py-14 text-white sm:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -40,7 +40,7 @@ export function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={item.label}
-                    className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-[#9CA3AF] transition hover:border-[#2563EB] hover:text-[#2563EB]"
+                    className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 text-[#9CA3AF] transition hover:border-[#5A42FF] hover:text-[#5A42FF]"
                   >
                     <Icon size={16} />
                   </Link>
@@ -77,16 +77,16 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="Your email"
-                className="w-full rounded-lg border border-white/10 bg-[#111111] px-3 py-2 text-sm text-white placeholder:text-[#6B7280] outline-none focus:border-[#2563EB]"
+                className="w-full rounded-lg border border-white/10 bg-[#120F36] px-3 py-2 text-sm text-white placeholder:text-[#605D84] outline-none focus:border-[#5A42FF]"
               />
-              <button className="rounded-lg bg-[#2563EB] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110">
+              <button className="rounded-lg bg-[#5A42FF] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110">
                 Subscribe
               </button>
             </div>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col justify-between gap-2 border-t border-white/10 pt-5 text-xs text-[#6B7280] md:flex-row">
+        <div className="mt-10 flex flex-col justify-between gap-2 border-t border-white/10 pt-5 text-xs text-[#605D84] md:flex-row">
           <p>© 2025 wrkflowz</p>
           <p>Designed and built with Next.js</p>
         </div>

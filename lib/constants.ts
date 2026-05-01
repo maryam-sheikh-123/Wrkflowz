@@ -29,7 +29,7 @@ export const services = [
     href: "/services/workflow-automation",
     title: "Workflow Automation",
     icon: "Globe",
-    color: "#2563EB",
+    color: "#5A42FF",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
     description:
       "Automate repetitive business flows with smart no-code and custom logic pipelines.",
@@ -114,7 +114,7 @@ export const services = [
 export const industries = [
   {
     name: "Startups",
-    color: "#2563EB",
+    color: "#5A42FF",
     desc: "MVPs and growth-ready products for early momentum.",
     challenges: ["Fast iteration", "MVP strategy", "Lean engineering"],
     projects: "18+",
@@ -157,7 +157,7 @@ export const industries = [
 ];
 
 export const stats = [
-  { label: "Projects Delivered", value: 50, suffix: "+", color: "#2563EB" },
+  { label: "Projects Delivered", value: 50, suffix: "+", color: "#5A42FF" },
   { label: "Happy Clients", value: 30, suffix: "+", color: "#7C3AED" },
   { label: "Years Experience", value: 3, suffix: "+", color: "#059669" },
   { label: "Satisfaction Rate", value: 99, suffix: "%", color: "#EA580C" },
@@ -167,7 +167,7 @@ export const processSteps = [
   {
     step: "01",
     title: "Discovery",
-    color: "#2563EB",
+    color: "#5A42FF",
     timeline: "~3 days",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
     description:
@@ -213,7 +213,7 @@ export const testimonials = [
     name: "Ayesha Khan",
     company: "FlowOrbit",
     initial: "A",
-    color: "#2563EB",
+    color: "#5A42FF",
   },
   {
     quote:

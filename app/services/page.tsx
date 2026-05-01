@@ -7,14 +7,14 @@ import { services } from "@/lib/constants";
 
 export default function ServicesPage() {
   return (
-    <main className="section-shell bg-[#F9FAFB] py-16">
+    <main className="section-shell bg-[#F5F3FF] py-16">
       <div className="container-shell">
         <section className="py-10 text-center">
           <p className="section-kicker justify-center">Our Services</p>
-          <h1 className="mt-4 text-4xl font-extrabold text-[#0A0A0A] sm:text-[56px]">
+          <h1 className="mt-4 text-4xl font-extrabold text-[#151239] sm:text-[56px]">
             What We Automate
           </h1>
-          <p className="mx-auto mt-3 max-w-2xl text-[#6B7280]">
+          <p className="mx-auto mt-3 max-w-2xl text-[#605D84]">
             End-to-end automation services for modern operations teams.
           </p>
         </section>
@@ -30,7 +30,7 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="overflow-hidden rounded-2xl border border-[#E5E7EB] bg-white shadow-[var(--shadow-sm)]"
+                className="overflow-hidden rounded-2xl border border-[#E2DDF5] bg-white shadow-[var(--shadow-sm)]"
                 style={{ borderLeft: `4px solid ${service.color}` }}
               >
                 <div className="grid gap-8 p-8 lg:grid-cols-[40%_60%] lg:items-start">
@@ -38,7 +38,7 @@ export default function ServicesPage() {
                     <div className="grid h-20 w-20 place-items-center rounded-2xl" style={{ background: `${service.color}1A` }}>
                       <Icon size={34} style={{ color: service.color }} />
                     </div>
-                    <h2 className="mt-6 text-3xl font-bold text-[#0A0A0A]">{service.title}</h2>
+                    <h2 className="mt-6 text-3xl font-bold text-[#151239]">{service.title}</h2>
                     <p className="mt-3 text-lg text-[#4B5563]">{service.description}</p>
                     <div className="mt-5 flex flex-wrap gap-2">
                       {service.tags.map((tag) => (
@@ -69,8 +69,8 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    <article className="group rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-6 transition-all duration-300 hover:border-[#D1D5DB] hover:bg-white hover:shadow-[var(--shadow-sm)] sm:col-span-2">
-                      <h3 className="text-lg font-bold text-[#0A0A0A]">What&apos;s included</h3>
+                    <article className="group rounded-xl border border-[#E2DDF5] bg-[#F5F3FF] p-6 transition-all duration-300 hover:border-[#D1D5DB] hover:bg-white hover:shadow-[var(--shadow-sm)] sm:col-span-2">
+                      <h3 className="text-lg font-bold text-[#151239]">What&apos;s included</h3>
                       <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                         {service.includes.map((item) => (
                           <li key={item} className="flex items-center gap-3 text-sm text-[#4B5563]">
@@ -80,8 +80,8 @@ export default function ServicesPage() {
                         ))}
                       </ul>
                     </article>
-                    <article className="group rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D1D5DB] hover:bg-white hover:shadow-[var(--shadow-sm)]">
-                      <h3 className="text-lg font-bold text-[#0A0A0A]">Ideal for</h3>
+                    <article className="group rounded-xl border border-[#E2DDF5] bg-[#F5F3FF] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D1D5DB] hover:bg-white hover:shadow-[var(--shadow-sm)]">
+                      <h3 className="text-lg font-bold text-[#151239]">Ideal for</h3>
                       <ul className="mt-4 space-y-3">
                         {service.idealFor.map((item) => (
                           <li key={item} className="flex items-center gap-3 text-sm text-[#4B5563]">
@@ -91,11 +91,11 @@ export default function ServicesPage() {
                         ))}
                       </ul>
                     </article>
-                    <article className="group rounded-xl border border-[#E5E7EB] bg-[#F9FAFB] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D1D5DB] hover:bg-white hover:shadow-[var(--shadow-sm)]">
-                      <h3 className="text-lg font-bold text-[#0A0A0A]">Expected outcomes</h3>
+                    <article className="group rounded-xl border border-[#E2DDF5] bg-[#F5F3FF] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#D1D5DB] hover:bg-white hover:shadow-[var(--shadow-sm)]">
+                      <h3 className="text-lg font-bold text-[#151239]">Expected outcomes</h3>
                       <div className="mt-4 flex flex-col gap-3">
                         {service.outcomes.slice(0, 2).map((item) => (
-                          <span key={item} className="rounded-lg border border-[#E5E7EB] bg-white px-3 py-2.5 text-sm font-medium text-[#374151] transition-colors group-hover:border-[#D1D5DB]">
+                          <span key={item} className="rounded-lg border border-[#E2DDF5] bg-white px-3 py-2.5 text-sm font-medium text-[#312D5A] transition-colors group-hover:border-[#D1D5DB]">
                             {item}
                           </span>
                         ))}
